@@ -64,32 +64,46 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
           <label>Alinhamento</label>
           <input value={character.alignment} onChange={(e) => updateField('alignment', e.target.value)} />
         </div>
-        <div className="field-row">
-          <label>Nível</label>
-          <input type="number" min="1" value={character.level} onChange={(e) => updateField('level', Number(e.target.value))} />
-          <label>Experiência</label>
-          <input type="number" min="0" value={character.experience} onChange={(e) => updateField('experience', Number(e.target.value))} />
-        </div>
-        <div className="field-row">
-          <label>Pontos de vida</label>
-          <input type="number" min="0" value={character.hitPoints} onChange={(e) => updateField('hitPoints', Number(e.target.value))} />
-          <label>Classe de armadura</label>
-          <input type="number" min="0" value={character.armorClass} onChange={(e) => updateField('armorClass', Number(e.target.value))} />
-        </div>
-        <div className="field-row">
-          <label>Deslocamento</label>
-          <input type="number" min="0" value={character.speed} onChange={(e) => updateField('speed', Number(e.target.value))} />
-          <label>Iniciativa</label>
-          <input type="number" value={character.initiative} onChange={(e) => updateField('initiative', Number(e.target.value))} />
-        </div>
-        <div className="field-row">
-          <label>Proficiência</label>
-          <input type="number" value={proficiencyBonus} disabled />
-          <label>Conjurador</label>
-          <select value={character.isCaster ? 'yes' : 'no'} onChange={(e) => updateField('isCaster', e.target.value === 'yes')}>
-            <option value="no">Não</option>
-            <option value="yes">Sim</option>
-          </select>
+      </section>
+
+      <section className="form-section stats-card">
+        <h3>Estatísticas</h3>
+        <div className="attribute-grid">
+          <div className="attribute-field">
+            <label>Nível</label>
+            <input type="number" min="1" value={character.level} onChange={(e) => updateField('level', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Experiência</label>
+            <input type="number" min="0" value={character.experience} onChange={(e) => updateField('experience', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Pontos de vida</label>
+            <input type="number" min="0" value={character.hitPoints} onChange={(e) => updateField('hitPoints', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Classe de armadura</label>
+            <input type="number" min="0" value={character.armorClass} onChange={(e) => updateField('armorClass', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Deslocamento</label>
+            <input type="number" min="0" value={character.speed} onChange={(e) => updateField('speed', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Iniciativa</label>
+            <input type="number" value={character.initiative} onChange={(e) => updateField('initiative', Number(e.target.value))} />
+          </div>
+          <div className="attribute-field">
+            <label>Proficiência</label>
+            <input type="number" value={proficiencyBonus} disabled />
+          </div>
+          <div className="attribute-field">
+            <label>Conjurador</label>
+            <select value={character.isCaster ? 'yes' : 'no'} onChange={(e) => updateField('isCaster', e.target.value === 'yes')}>
+              <option value="no">Não</option>
+              <option value="yes">Sim</option>
+            </select>
+          </div>
         </div>
       </section>
 
