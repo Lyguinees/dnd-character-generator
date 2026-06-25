@@ -36,7 +36,12 @@ function InventoryBlock({ inventory, onChange }) {
       <div className="inventory-list">
         {inventory.items.map((item, index) => (
           <div key={index} className="inventory-item-row">
-            <input value={item} onChange={(e) => updateItem(index, e.target.value)} placeholder="Item" />
+            <input
+              className="inventory-note-input"
+              value={item}
+              onChange={(e) => updateItem(index, e.target.value)}
+              placeholder="Item"
+            />
             <button type="button" className="danger" onClick={() => removeItem(index)}>Remover</button>
           </div>
         ))}

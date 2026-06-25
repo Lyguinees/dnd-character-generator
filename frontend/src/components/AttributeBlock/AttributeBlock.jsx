@@ -20,12 +20,15 @@ function AttributeBlock({ attributes, onChange, getModifier }) {
             <div key={attribute.key} className="attribute-field stacked-attribute">
               <label>{attribute.label}</label>
               <input
+                className="attribute-score-input"
                 type="number"
                 min="1"
                 value={score}
                 onChange={(e) => onChange(attribute.key, Number(e.target.value))}
               />
-              <span>{getModifier(score) >= 0 ? `+${getModifier(score)}` : getModifier(score)}</span>
+              <div className="attribute-modifier">
+                {getModifier(score) >= 0 ? `+${getModifier(score)}` : getModifier(score)}
+              </div>
             </div>
           );
         })}
