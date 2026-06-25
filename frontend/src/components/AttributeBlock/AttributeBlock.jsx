@@ -13,11 +13,11 @@ function AttributeBlock({ attributes, onChange, getModifier }) {
   return (
     <section className="card section-card">
       <h3>Atributos</h3>
-      <div className="attribute-grid">
+      <div className="attribute-column">
         {attributeKeys.map((attribute) => {
           const score = attributes[attribute.key];
           return (
-            <div key={attribute.key} className="attribute-field">
+            <div key={attribute.key} className="attribute-field stacked-attribute">
               <label>{attribute.label}</label>
               <input
                 type="number"
