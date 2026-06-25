@@ -45,38 +45,40 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
     <form className="card form-card" onSubmit={handleSubmit}>
       <h2>{character.id ? 'Editar Ficha' : 'Nova Ficha'}</h2>
 
-      <section className="form-section basic-info-card">
-        <div className="field-row">
+      <section className="form-section header-card-grid">
+        <div className="character-name-card">
           <label>Nome do personagem</label>
           <input value={character.name} onChange={(e) => updateField('name', e.target.value)} />
-          <label>Nome do jogador</label>
-          <input value={character.playerName} onChange={(e) => updateField('playerName', e.target.value)} />
         </div>
-        <div className="field-row">
-          <label>Raça</label>
-          <input value={character.race} onChange={(e) => updateField('race', e.target.value)} />
-          <label>Classe</label>
-          <input value={character.className} onChange={(e) => updateField('className', e.target.value)} />
-        </div>
-        <div className="field-row">
-          <label>Antecedente</label>
-          <input value={character.background} onChange={(e) => updateField('background', e.target.value)} />
-          <label>Alinhamento</label>
-          <input value={character.alignment} onChange={(e) => updateField('alignment', e.target.value)} />
+        <div className="header-details-card">
+          <div className="field-row">
+            <label>Classe</label>
+            <input value={character.className} onChange={(e) => updateField('className', e.target.value)} />
+            <label>Nível</label>
+            <input type="number" min="1" value={character.level} onChange={(e) => updateField('level', Number(e.target.value))} />
+          </div>
+          <div className="field-row">
+            <label>Antecedente</label>
+            <input value={character.background} onChange={(e) => updateField('background', e.target.value)} />
+            <label>Nome do jogador</label>
+            <input value={character.playerName} onChange={(e) => updateField('playerName', e.target.value)} />
+          </div>
+          <div className="field-row">
+            <label>Raça</label>
+            <input value={character.race} onChange={(e) => updateField('race', e.target.value)} />
+            <label>Alinhamento</label>
+            <input value={character.alignment} onChange={(e) => updateField('alignment', e.target.value)} />
+          </div>
+          <div className="field-row">
+            <label>Experiência</label>
+            <input type="number" min="0" value={character.experience} onChange={(e) => updateField('experience', Number(e.target.value))} />
+          </div>
         </div>
       </section>
 
       <section className="form-section stats-card">
         <h3>Estatísticas</h3>
         <div className="attribute-grid">
-          <div className="attribute-field">
-            <label>Nível</label>
-            <input type="number" min="1" value={character.level} onChange={(e) => updateField('level', Number(e.target.value))} />
-          </div>
-          <div className="attribute-field">
-            <label>Experiência</label>
-            <input type="number" min="0" value={character.experience} onChange={(e) => updateField('experience', Number(e.target.value))} />
-          </div>
           <div className="attribute-field">
             <label>Pontos de vida</label>
             <input type="number" min="0" value={character.hitPoints} onChange={(e) => updateField('hitPoints', Number(e.target.value))} />

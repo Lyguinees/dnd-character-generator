@@ -61,6 +61,49 @@ button:hover {
   margin-top: 1rem;
 }
 
+.header-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.character-name-card,
+.header-details-card,
+.stats-card {
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.character-name-card label,
+.header-details-card label,
+.stats-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.character-name-card input,
+.header-details-card input,
+.header-details-card select,
+.stats-card input,
+.stats-card select {
+  width: 100%;
+}
+
+.header-details-card .field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header-details-card .field-row:last-child {
+  grid-template-columns: 1fr;
+}
+
 .basic-info-card {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.05);
