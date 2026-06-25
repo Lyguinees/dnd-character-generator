@@ -153,7 +153,13 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
       </section>
 
       <section className="form-section attributes-saves-grid">
-        <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
+        <div>
+          <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
+          <div className="inventory-combat-grid">
+            <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
+            <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
+          </div>
+        </div>
         <div className="right-column">
           <div className="saving-features-grid">
             <SavingThrowsBlock
@@ -165,17 +171,13 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
             />
             <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
           </div>
-          <div className="skills-inventory-grid">
-            <SkillsBlock
-              skills={character.skills}
-              attributes={attributes}
-              proficiencyBonus={proficiencyBonus}
-              onChange={(skills) => updateNested('skills', skills)}
-              getSkillBonus={getSkillBonus}
-            />
-            <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
-          </div>
-          <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
+          <SkillsBlock
+            skills={character.skills}
+            attributes={attributes}
+            proficiencyBonus={proficiencyBonus}
+            onChange={(skills) => updateNested('skills', skills)}
+            getSkillBonus={getSkillBonus}
+          />
         </div>
       </section>
       {character.isCaster && <SpellsBlock spells={character.spells} onChange={(spells) => updateNested('spells', spells)} />}
