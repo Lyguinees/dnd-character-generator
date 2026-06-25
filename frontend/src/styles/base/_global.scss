@@ -196,8 +196,9 @@ button:hover {
   gap: 1.5rem;
 }
 
-.skills-block-card {
-  margin-top: 1.5rem;
+.right-column {
+  display: grid;
+  gap: 1.5rem;
 }
 
 @media #{mobile()} {
