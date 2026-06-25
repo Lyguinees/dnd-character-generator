@@ -32,6 +32,29 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
     }));
   }
 
+  function handleImageChange(event) {
+    const file = event.target.files?.[0];
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCharacter((current) => ({
+        ...current,
+        imageUrl: reader.result || '',
+      }));
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function handleRemoveImage() {
+    setCharacter((current) => ({
+      ...current,
+      imageUrl: '',
+    }));
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     onSave(character);
@@ -49,6 +72,26 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
         <div className="character-name-card">
           <label>Nome do personagem</label>
           <input value={character.name} onChange={(e) => updateField('name', e.target.value)} />
+          <div className="image-upload-row">
+            <div className="image-preview">
+              {character.imageUrl ? (
+                <img src={character.imageUrl} alt="Personagem" />
+              ) : (
+                <span>Imagem do personagem</span>
+              )}
+            </div>
+            <div className="image-actions">
+              <label className="image-upload-button">
+                Escolher imagem
+                <input type="file" accept="image/*" onChange={handleImageChange} />
+              </label>
+              {character.imageUrl && (
+                <button type="button" className="secondary-button remove-image-button" onClick={handleRemoveImage}>
+                  Remover
+                </button>
+              )}
+            </div>
+          </div>
         </div>
         <div className="header-details-card">
           <div className="field-row">

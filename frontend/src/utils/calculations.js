@@ -41,6 +41,7 @@ function getDefaultCharacter() {
     features: { raceTraits: '', classTraits: '', otherTraits: '' },
     spells: [],
     isCaster: false,
+    imageUrl: '',
   };
 }
 
@@ -129,6 +130,7 @@ function generateRandomCharacter() {
     inventory: { cp: randomInteger(0, 100), pp: randomInteger(0, 20), ep: randomInteger(0, 50), gp: randomInteger(0, 200), sp: randomInteger(0, 100), items: [] },
     features: { raceTraits: '', classTraits: '', otherTraits: '' },
     spells: [],
+    imageUrl: '',
   };
 }
 
