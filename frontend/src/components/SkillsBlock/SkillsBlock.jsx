@@ -29,15 +29,18 @@ function SkillsBlock({ skills, attributes, proficiencyBonus, onChange, getSkillB
           <span>Bônus</span>
         </div>
         {currentSkills.map((skill) => (
-          <div key={skill.id} className="table-row">
+          <div key={skill.id} className="table-row skill-row">
             <span>{skill.name}</span>
             <span>{skill.attribute}</span>
             <span>
-              <input
-                type="checkbox"
-                checked={skill.proficient}
-                onChange={() => handleToggleSkill(skill.id)}
-              />
+              <label className="circle-checkbox">
+                <input
+                  type="checkbox"
+                  checked={skill.proficient}
+                  onChange={() => handleToggleSkill(skill.id)}
+                />
+                <span className="checkmark"></span>
+              </label>
             </span>
             <span>{getSkillBonus(skill, attributes, proficiencyBonus)}</span>
           </div>

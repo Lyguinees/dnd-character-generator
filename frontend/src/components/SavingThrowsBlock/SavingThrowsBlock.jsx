@@ -32,10 +32,13 @@ function SavingThrowsBlock({ savingThrows, attributes, proficiencyBonus, onChang
           const saved = savingThrows.find((entry) => entry.key === item.key);
           const proficient = Boolean(saved?.proficient);
           return (
-            <div key={item.key} className="table-row">
+            <div key={item.key} className="table-row save-row">
               <span>{item.label}</span>
               <span>
-                <input type="checkbox" checked={proficient} onChange={() => handleToggleSaving(item.key)} />
+                <label className="circle-checkbox">
+                  <input type="checkbox" checked={proficient} onChange={() => handleToggleSaving(item.key)} />
+                  <span className="checkmark"></span>
+                </label>
               </span>
               <span>{getSavingThrowBonus(item.key, attributes, proficiencyBonus, proficient)}</span>
             </div>

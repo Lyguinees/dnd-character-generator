@@ -13,11 +13,11 @@ function AttributeBlock({ attributes, onChange, getModifier }) {
   return (
     <section className="card section-card">
       <h3>Atributos</h3>
-      <div className="attribute-column">
+      <div className="attribute-grid sheet-attributes-grid">
         {attributeKeys.map((attribute) => {
           const score = attributes[attribute.key];
           return (
-            <div key={attribute.key} className="attribute-field stacked-attribute">
+            <div key={attribute.key} className="attribute-field stacked-attribute attribute-card">
               <label>{attribute.label}</label>
               <input
                 className="attribute-score-input"
@@ -26,7 +26,7 @@ function AttributeBlock({ attributes, onChange, getModifier }) {
                 value={score}
                 onChange={(e) => onChange(attribute.key, Number(e.target.value))}
               />
-              <div className="attribute-modifier">
+              <div className="attribute-modifier-circle">
                 {getModifier(score) >= 0 ? `+${getModifier(score)}` : getModifier(score)}
               </div>
             </div>

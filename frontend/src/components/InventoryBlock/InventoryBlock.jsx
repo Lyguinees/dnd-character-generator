@@ -35,7 +35,7 @@ function InventoryBlock({ inventory, onChange }) {
       </div>
       <div className="inventory-list">
         {inventory.items.map((item, index) => (
-          <div key={index} className="inventory-item-row">
+          <div key={index} className="inventory-item-row inventory-note-row">
             <input
               className="inventory-note-input"
               value={item}
@@ -45,7 +45,7 @@ function InventoryBlock({ inventory, onChange }) {
             <button type="button" className="danger" onClick={() => removeItem(index)}>Remover</button>
           </div>
         ))}
-        <button type="button" className="secondary-button" onClick={addItem}>Adicionar item</button>
+        <button type="button" className="secondary-button inventory-add-button" onClick={addItem}>Adicionar item</button>
       </div>
     </section>
   );
