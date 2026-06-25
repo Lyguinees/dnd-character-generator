@@ -177,7 +177,9 @@ button:hover {
 .basic-info-card input,
 .basic-info-card select,
 .stats-card input,
-.stats-card select {
+.stats-card select,
+.attributes-saves-grid input,
+.attributes-saves-grid select {
   width: 100%;
 }
 
@@ -186,6 +188,18 @@ button:hover {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.attributes-saves-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media #{mobile()} {
+  .attributes-saves-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stats-card h3 {

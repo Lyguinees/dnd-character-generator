@@ -152,20 +152,22 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
         </div>
       </section>
 
-      <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
+      <section className="form-section attributes-saves-grid">
+        <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
+        <SavingThrowsBlock
+          savingThrows={character.savingThrows}
+          attributes={attributes}
+          proficiencyBonus={proficiencyBonus}
+          onChange={(savingThrows) => updateNested('savingThrows', savingThrows)}
+          getSavingThrowBonus={getSavingThrowBonus}
+        />
+      </section>
       <SkillsBlock
         skills={character.skills}
         attributes={attributes}
         proficiencyBonus={proficiencyBonus}
         onChange={(skills) => updateNested('skills', skills)}
         getSkillBonus={getSkillBonus}
-      />
-      <SavingThrowsBlock
-        savingThrows={character.savingThrows}
-        attributes={attributes}
-        proficiencyBonus={proficiencyBonus}
-        onChange={(savingThrows) => updateNested('savingThrows', savingThrows)}
-        getSavingThrowBonus={getSavingThrowBonus}
       />
       <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
