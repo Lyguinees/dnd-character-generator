@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Crimson+Text:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
 body {
   line-height: 1.4;
   font-family: $font-family;
@@ -13,25 +15,27 @@ img {
 button.primary-button,
 button.secondary-button,
 button.danger {
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid $border-color;
   padding: 0.45rem 0.75rem;
   border-radius: $radius;
   transition: transform 0.15s ease, opacity 0.15s ease;
+  background: #f1ead7;
+  color: #111;
 }
 
 button.primary-button {
-  background: linear-gradient(135deg, $accent-color, #d7b474);
-  color: $bg-color;
+  background: linear-gradient(135deg, rgba(123, 90, 51, 0.18), rgba(213, 186, 110, 0.35));
+  color: #111;
 }
 
 button.secondary-button {
-  background: $secondary-color;
-  color: $text-color;
+  background: rgba(90, 74, 49, 0.16);
+  color: #111;
 }
 
 button.danger {
-  background: $danger-color;
-  color: #fff;
+  background: rgba(139, 43, 26, 0.18);
+  color: #111;
 }
 
 button:hover {
@@ -79,7 +83,7 @@ button:hover {
 .sheet-block,
 .card {
   padding: 0.65rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #f7f0dc;
   border-radius: $radius;
   border: 1px solid $border-color;
   box-shadow: $shadow;
@@ -94,14 +98,14 @@ button:hover {
 .image-preview {
   width: 100%;
   min-height: 120px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: #f7f0dc;
+  border: 1px dashed rgba(34, 34, 34, 0.25);
   border-radius: $radius;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  color: rgba(226, 235, 255, 0.75);
+  color: rgba(17, 17, 17, 0.7);
 }
 
 .image-preview img {
@@ -140,8 +144,9 @@ button:hover {
 }
 
 .remove-image-button {
-  background: rgba(255, 255, 255, 0.08);
+  background: #efe7d8;
   color: $text-color;
+  border: 1px solid $border-color;
 }
 
 .character-name-card label,
@@ -246,8 +251,8 @@ button:hover {
   gap: 0.5rem;
   padding: 0.45rem 0.5rem;
   border-radius: $radius;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f7f0dc;
+  border: 1px solid $border-color;
 }
 
 .table-header {
@@ -272,14 +277,14 @@ button:hover {
   display: grid;
   gap: 0.5rem;
   padding: 0.6rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #f7f0dc;
   border-radius: $radius;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid $border-color;
 }
 
 .attribute-field {
   padding: 0.6rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: #f7f0dc;
   border-radius: $radius;
   display: grid;
   gap: 0.35rem;
@@ -291,9 +296,9 @@ button:hover {
   display: grid;
   gap: 0.45rem;
   padding: 0.6rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #f7f0dc;
   border-radius: $radius;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid $border-color;
 }
 
 .combat-row input,
@@ -342,7 +347,7 @@ button:hover {
   gap: 0.6rem;
   border: 1px solid $border-color;
   border-radius: $radius;
-  background: rgba(255, 255, 255, 0.04);
+  background: #f7f0dc;
 }
 
 .character-card strong {
