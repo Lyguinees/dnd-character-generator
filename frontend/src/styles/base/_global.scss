@@ -11,7 +11,7 @@ button.primary-button,
 button.secondary-button,
 button.danger {
   border: none;
-  padding: 0.9rem 1.25rem;
+  padding: 0.7rem 1rem;
   border-radius: 12px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -41,14 +41,14 @@ button:hover {
 }
 
 .card h2, .card h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .field-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .field-row label {
@@ -64,23 +64,23 @@ button:hover {
 .header-card-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .character-name-card,
 .header-details-card,
 .stats-card {
-  padding: 1.25rem;
+  padding: 1rem;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .image-upload-row {
   display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .image-preview {
@@ -112,7 +112,7 @@ button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1rem;
+  padding: 0.7rem 0.9rem;
   background: $secondary-color;
   color: $text-color;
   border-radius: 12px;
@@ -220,8 +220,8 @@ button:hover {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.85rem 1rem;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.08);
 }
@@ -281,14 +281,14 @@ button:hover {
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .app-shell {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
 }
 
 .app-header {
@@ -301,7 +301,7 @@ button:hover {
 
 .app-content {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .character-grid {
