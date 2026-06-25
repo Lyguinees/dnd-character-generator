@@ -153,7 +153,7 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
       </section>
 
       <section className="form-section attributes-saves-grid">
-        <div>
+        <div className="attributes-left-column">
           <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
           <div className="inventory-combat-grid">
             <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />

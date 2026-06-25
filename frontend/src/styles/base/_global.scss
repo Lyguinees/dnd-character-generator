@@ -137,6 +137,15 @@ button:hover {
 .bio-card {
   width: 100%;
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.bio-card textarea {
+  flex: 1;
+  min-height: 0;
 }
 
 .sheet-header-grid {
@@ -544,6 +553,14 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.6rem;
+  align-items: stretch;
+}
+
+.attributes-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 0;
 }
 
 .right-column {
