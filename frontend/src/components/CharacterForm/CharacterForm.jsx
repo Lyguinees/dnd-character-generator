@@ -169,11 +169,11 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
             onChange={(skills) => updateNested('skills', skills)}
             getSkillBonus={getSkillBonus}
           />
+          <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
         </div>
       </section>
       <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
-      <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
       {character.isCaster && <SpellsBlock spells={character.spells} onChange={(spells) => updateNested('spells', spells)} />}
 
       <div className="form-actions">
