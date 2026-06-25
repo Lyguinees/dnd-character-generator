@@ -155,13 +155,16 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
       <section className="form-section attributes-saves-grid">
         <AttributeBlock attributes={attributes} onChange={updateAttribute} getModifier={getModifier} />
         <div className="right-column">
-          <SavingThrowsBlock
-            savingThrows={character.savingThrows}
-            attributes={attributes}
-            proficiencyBonus={proficiencyBonus}
-            onChange={(savingThrows) => updateNested('savingThrows', savingThrows)}
-            getSavingThrowBonus={getSavingThrowBonus}
-          />
+          <div className="saving-features-grid">
+            <SavingThrowsBlock
+              savingThrows={character.savingThrows}
+              attributes={attributes}
+              proficiencyBonus={proficiencyBonus}
+              onChange={(savingThrows) => updateNested('savingThrows', savingThrows)}
+              getSavingThrowBonus={getSavingThrowBonus}
+            />
+            <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
+          </div>
           <SkillsBlock
             skills={character.skills}
             attributes={attributes}
@@ -169,11 +172,10 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
             onChange={(skills) => updateNested('skills', skills)}
             getSkillBonus={getSkillBonus}
           />
-          <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
         </div>
       </section>
-      <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
+      <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       {character.isCaster && <SpellsBlock spells={character.spells} onChange={(spells) => updateNested('spells', spells)} />}
 
       <div className="form-actions">
