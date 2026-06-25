@@ -75,4 +75,61 @@ function getSavingThrowBonus(attributeName, attributes, proficiencyBonus, profic
   return modifier + (proficient ? proficiencyBonus : 0);
 }
 
-export { getModifier, getProficiencyBonus, getDefaultCharacter, skillsList, getSkillBonus, getSavingThrowBonus };
+function randomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function rollAttribute() {
+  const rolls = Array.from({ length: 4 }, () => randomInteger(1, 6));
+  rolls.sort((a, b) => a - b);
+  return rolls.slice(1).reduce((sum, value) => sum + value, 0);
+}
+
+function chooseRandom(list) {
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function generateRandomCharacter() {
+  const attributes = {
+    strength: rollAttribute(),
+    dexterity: rollAttribute(),
+    constitution: rollAttribute(),
+    intelligence: rollAttribute(),
+    wisdom: rollAttribute(),
+    charisma: rollAttribute(),
+  };
+
+  const classes = ['Guerreiro', 'Mago', 'Clérigo', 'Ladino', 'Bardo', 'Patrulheiro', 'Druida', 'Monge'];
+  const races = ['Humano', 'Elfo', 'Anão', 'Halfling', 'Gnomo', 'Tiefling', 'Meio-Elfo'];
+  const backgrounds = ['Sábio', 'Soldado', 'Nobre', 'Criminoso', 'Forasteiro', 'Acólito', 'Artesão'];
+  const alignments = ['Leal e Bom', 'Neutro e Bom', 'Caótico e Bom', 'Neutro', 'Leal e Mau', 'Neutro e Mau', 'Caótico e Mau'];
+
+  const level = randomInteger(1, 10);
+  const constitutionModifier = getModifier(attributes.constitution);
+
+  return {
+    ...getDefaultCharacter(),
+    name: `Personagem ${randomInteger(1, 999)}`,
+    playerName: `Jogador ${randomInteger(1, 999)}`,
+    race: chooseRandom(races),
+    className: chooseRandom(classes),
+    background: chooseRandom(backgrounds),
+    alignment: chooseRandom(alignments),
+    level,
+    experience: randomInteger(0, level * 300),
+    hitPoints: Math.max(1, 8 + constitutionModifier),
+    armorClass: 10 + getModifier(attributes.dexterity),
+    speed: chooseRandom([25, 30, 35]),
+    initiative: getModifier(attributes.dexterity),
+    isCaster: Math.random() < 0.4,
+    attributes,
+    skills: [],
+    savingThrows: [],
+    attacks: [],
+    inventory: { cp: randomInteger(0, 100), pp: randomInteger(0, 20), ep: randomInteger(0, 50), gp: randomInteger(0, 200), sp: randomInteger(0, 100), items: [] },
+    features: { raceTraits: '', classTraits: '', otherTraits: '' },
+    spells: [],
+  };
+}
+
+export { getModifier, getProficiencyBonus, getDefaultCharacter, skillsList, getSkillBonus, getSavingThrowBonus, generateRandomCharacter };

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { getModifier, getProficiencyBonus, skillsList, getSkillBonus, getSavingThrowBonus, getDefaultCharacter } from '../../utils/calculations';
+import { getModifier, getProficiencyBonus, skillsList, getSkillBonus, getSavingThrowBonus, getDefaultCharacter, generateRandomCharacter } from '../../utils/calculations';
 import AttributeBlock from '../AttributeBlock/AttributeBlock';
 import SkillsBlock from '../SkillsBlock/SkillsBlock';
 import SavingThrowsBlock from '../SavingThrowsBlock/SavingThrowsBlock';
@@ -35,6 +35,10 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
   function handleSubmit(event) {
     event.preventDefault();
     onSave(character);
+  }
+
+  function handleGenerateRandom() {
+    setCharacter(generateRandomCharacter());
   }
 
   return (
@@ -110,6 +114,7 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
       {character.isCaster && <SpellsBlock spells={character.spells} onChange={(spells) => updateNested('spells', spells)} />}
 
       <div className="form-actions">
+        <button type="button" className="secondary-button" onClick={handleGenerateRandom}>Gerar aleatória</button>
         <button type="button" className="secondary-button" onClick={onCancel}>Cancelar</button>
         <button type="submit" className="primary-button">Salvar ficha</button>
       </div>
