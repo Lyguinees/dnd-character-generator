@@ -165,16 +165,18 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
             />
             <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />
           </div>
-          <SkillsBlock
-            skills={character.skills}
-            attributes={attributes}
-            proficiencyBonus={proficiencyBonus}
-            onChange={(skills) => updateNested('skills', skills)}
-            getSkillBonus={getSkillBonus}
-          />
+          <div className="skills-inventory-grid">
+            <SkillsBlock
+              skills={character.skills}
+              attributes={attributes}
+              proficiencyBonus={proficiencyBonus}
+              onChange={(skills) => updateNested('skills', skills)}
+              getSkillBonus={getSkillBonus}
+            />
+            <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
+          </div>
         </div>
       </section>
-      <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
       <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       {character.isCaster && <SpellsBlock spells={character.spells} onChange={(spells) => updateNested('spells', spells)} />}
 

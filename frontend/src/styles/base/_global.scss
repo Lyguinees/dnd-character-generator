@@ -201,8 +201,20 @@ button:hover {
   gap: 1rem;
 }
 
+.saving-features-grid,
+.skills-inventory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
 @media #{mobile()} {
   .attributes-saves-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saving-features-grid,
+  .skills-inventory-grid {
     grid-template-columns: 1fr;
   }
 }
