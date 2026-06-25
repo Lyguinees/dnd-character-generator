@@ -39,6 +39,7 @@ function getDefaultCharacter() {
     attacks: [],
     inventory: { cp: 0, pp: 0, ep: 0, gp: 0, sp: 0, items: [] },
     features: { raceTraits: '', classTraits: '', otherTraits: '' },
+    bio: '',
     spells: [],
     isCaster: false,
     imageUrl: '',

@@ -159,6 +159,14 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
             <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
             <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
           </div>
+          <section className="card section-card bio-card">
+            <h3>Bio</h3>
+            <textarea
+              value={character.bio}
+              onChange={(e) => updateField('bio', e.target.value)}
+              placeholder="Escreva a biografia do personagem..."
+            />
+          </section>
         </div>
         <div className="right-column">
           <div className="saving-features-grid">
