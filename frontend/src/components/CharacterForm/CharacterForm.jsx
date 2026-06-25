@@ -162,13 +162,15 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
           getSavingThrowBonus={getSavingThrowBonus}
         />
       </section>
-      <SkillsBlock
-        skills={character.skills}
-        attributes={attributes}
-        proficiencyBonus={proficiencyBonus}
-        onChange={(skills) => updateNested('skills', skills)}
-        getSkillBonus={getSkillBonus}
-      />
+      <section className="form-section skills-block-card">
+        <SkillsBlock
+          skills={character.skills}
+          attributes={attributes}
+          proficiencyBonus={proficiencyBonus}
+          onChange={(skills) => updateNested('skills', skills)}
+          getSkillBonus={getSkillBonus}
+        />
+      </section>
       <CombatBlock attacks={character.attacks} onChange={(attacks) => updateNested('attacks', attacks)} />
       <InventoryBlock inventory={character.inventory} onChange={(inventory) => updateNested('inventory', inventory)} />
       <FeaturesBlock features={character.features} onChange={(features) => updateNested('features', features)} />

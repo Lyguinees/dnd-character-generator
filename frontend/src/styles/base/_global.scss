@@ -196,6 +196,10 @@ button:hover {
   gap: 1.5rem;
 }
 
+.skills-block-card {
+  margin-top: 1.5rem;
+}
+
 @media #{mobile()} {
   .attributes-saves-grid {
     grid-template-columns: 1fr;
