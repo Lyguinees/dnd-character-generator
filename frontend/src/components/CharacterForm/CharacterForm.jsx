@@ -45,7 +45,7 @@ function CharacterForm({ character: initialCharacter, onSave, onCancel }) {
     <form className="card form-card" onSubmit={handleSubmit}>
       <h2>{character.id ? 'Editar Ficha' : 'Nova Ficha'}</h2>
 
-      <section className="form-section">
+      <section className="form-section basic-info-card">
         <div className="field-row">
           <label>Nome do personagem</label>
           <input value={character.name} onChange={(e) => updateField('name', e.target.value)} />
