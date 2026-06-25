@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  background: linear-gradient(180deg, #1c1914 0%, #191613 100%);
+  color: $text-color;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, textarea, select {
+  border: 1px solid $border-color;
+  background: #2e2a22;
+  color: $text-color;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}

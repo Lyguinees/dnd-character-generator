@@ -1,0 +1,211 @@
+body {
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button.primary-button,
+button.secondary-button,
+button.danger {
+  border: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button.primary-button {
+  background: linear-gradient(135deg, $accent-color, #d7b474);
+  color: $bg-color;
+}
+
+button.secondary-button {
+  background: $secondary-color;
+  color: $text-color;
+}
+
+button.danger {
+  background: $danger-color;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.card {
+  @include card-style;
+}
+
+.card h2, .card h3 {
+  margin-bottom: 1rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field-row label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.form-section label {
+  margin-top: 1rem;
+}
+
+.table-block, .attribute-grid, .combat-row, .inventory-list, .spell-row {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.table-header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.attribute-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.attribute-field {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.combat-row,
+.inventory-item-row,
+.spell-row {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.combat-row input,
+.inventory-item-row input,
+.spell-row input,
+.spell-row textarea {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.app-shell {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.app-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.character-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.character-card {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.character-card strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sheet-card {
+  padding: 1.5rem;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sheet-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sheet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sheet-block {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+@media #{mobile()} {
+  .app-header,
+  .sheet-grid,
+  .field-row,
+  .table-row,
+  .character-card {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sheet-header {
+    flex-direction: column;
+  }
+}

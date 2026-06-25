@@ -1,0 +1,10 @@
+@mixin card-style {
+  background: $card-color;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@function mobile() {
+  @return '(max-width: 860px)';
+}

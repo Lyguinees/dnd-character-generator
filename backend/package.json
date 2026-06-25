@@ -1,0 +1,17 @@
+{
+  "name": "dnd-character-generator-backend",
+  "version": "0.1.0",
+  "description": "Backend API for D&D 5e character generator",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
